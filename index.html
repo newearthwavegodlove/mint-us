@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3G18MLBZ4J"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3G18MLBZ4J');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/sunflower.ico" type="image/x-icon">
@@ -37,17 +28,18 @@
       box-shadow: -2px 10px 5px rgba(0, 0, 0, 0);
       border-radius: 10px;
     }
-    .video-wrapper {
+    .image-wrapper {
       width: 100%;
       height: 100%;
       position: relative;
     }
-    .video-wrapper iframe {
+    .image-wrapper img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      object-fit: contain; /* Ensures the whole image is visible */
     }
     .content {
       padding: 15px; /* Adjust padding */
@@ -77,13 +69,8 @@
 </head>
 <body>
   <div class="container">
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/hQWOhJE9i50?si=dkjX7WTf0nHOcokx" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" 
-              allowfullscreen>
-      </iframe>
+    <div class="image-wrapper">
+      <img src="c:/Users/tommy/OneDrive/Desktop/usesinclude.jpg" alt="Uses Include">
     </div>
     <div class="content">
       <p>Create MINT USA Today!</p>
