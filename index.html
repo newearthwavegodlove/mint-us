@@ -16,18 +16,16 @@
       margin: 0;
       padding: 0;
       width: 100%;
-      overflow-x: hidden; /* Remove horizontal scroll */
+      overflow-x: hidden;
       font-family: 'Rubik', Helvetica, Arial, sans-serif;
       background: #f0f0f0;
     }
-
     /* Full-height flex container to center content vertically */
     body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
-
     /* Rainbow animated title */
     header {
       text-align: center;
@@ -48,8 +46,7 @@
       83%  { color: indigo; }
       100% { color: violet; }
     }
-
-    /* Container for the content box */
+    /* Container for the donation box */
     .container {
       flex: 1;
       display: flex;
@@ -57,49 +54,41 @@
       justify-content: center;
       padding: 20px;
     }
-
-    /* The white box that holds text and button */
-    .box {
-      background: #fff;
+    /* New donation button styling */
+    .donation-box {
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 259px;
+      background: #FFFFFF;
       border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
       box-shadow: -2px 10px 5px rgba(0, 0, 0, 0);
-      max-width: 300px; /* Ensures no horizontal overflow */
-      width: 100%;
+      border-radius: 10px;
       padding: 20px;
+      font-family: Rubik, SQ Market, Helvetica, Arial, sans-serif;
       text-align: center;
     }
-
-    /* Adjust text styling */
-    .box p {
+    .donation-box p {
       font-size: 18px;
       line-height: 20px;
       margin: 10px 0;
     }
-    .box p.price {
+    .donation-box p.bold {
       font-weight: 600;
     }
-
-    /* Single-color button */
-    .give-now-btn {
+    .donation-box a {
       display: inline-block;
       font-size: 18px;
-      font-weight: bold;
-      line-height: 40px;
-      height: 40px;
-      color: #fff;
-      background-color: #7f00ff; /* Purple background, easy to see vs. yellow */
+      line-height: 48px;
+      height: 48px;
+      color: #000000;
+      min-width: 212px;
+      background-color: #ffbf00;
       text-align: center;
-      text-decoration: none;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
       border-radius: 50px;
-      padding: 0 20px;
-      border: none;
-      cursor: pointer;
-    }
-    /* Remove default underline on anchor hover, etc. */
-    .give-now-btn:hover,
-    .give-now-btn:focus,
-    .give-now-btn:active {
       text-decoration: none;
     }
   </style>
@@ -110,19 +99,18 @@
     <h1 class="title">🌻 NEW GOD LOVE 🌻</h1>
   </header>
 
-  <!-- Main container to center the box -->
+  <!-- Main container to center the donation box -->
   <div class="container">
-    <div class="box">
-      <p>CREATE MINT USA NOW</p>
-      <p class="price">$3.20</p>
+    <div class="donation-box">
+      <p>CREATE MINT USA NOW TODAY!</p>
+      <p class="bold">Choose Your Price From $1 to $5,000</p>
       <a
         id="embedded-checkout-modal-checkout-button"
         target="_blank"
-        data-url="https://square.link/u/KXsz9hcs?src=embd"
-        href="https://square.link/u/KXsz9hcs?src=embed"
-        class="give-now-btn"
+        data-url="https://square.link/u/wHbsGWlw?src=embd"
+        href="https://square.link/u/wHbsGWlw?src=embed"
       >
-        Give Now!
+        Donate
       </a>
     </div>
   </div>
@@ -136,7 +124,7 @@
       const title = 'Square Payment Links';
 
       // Use the top window for size calculations
-      const topWindow = window.top || window;
+      const topWindow = window.top ? window.top : window;
 
       // Fix dual-screen position
       const dualScreenLeft = topWindow.screenLeft !== undefined ? topWindow.screenLeft : topWindow.screenX;
@@ -151,17 +139,12 @@
       const systemZoom = width / topWindow.screen.availWidth;
       const left = (width - w) / 2 / systemZoom + dualScreenLeft;
       const top = (height - h) / 2 / systemZoom + dualScreenTop;
-
-      const newWindow = window.open(
-        url,
-        title,
-        `scrollbars=yes, width=${w / systemZoom}, height=${h / systemZoom}, top=${top}, left=${left}`
-      );
+      const newWindow = window.open(url, title, `scrollbars=yes, width=${w / systemZoom}, height=${h / systemZoom}, top=${top}, left=${left}`);
 
       if (window.focus) newWindow.focus();
     }
 
-    // Bind the click event to the button
+    // Bind the click event to the donation button
     document.getElementById('embedded-checkout-modal-checkout-button').addEventListener('click', function(e) {
       showCheckoutWindow(e);
     });
