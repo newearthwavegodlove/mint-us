@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4/20</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #001f3f; /* Dark blue background */
+    }
+    #overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+    }
+    .centered {
+      font-size: 3em;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+    #message {
+      font-size: 1.5em;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    #countdown {
+      font-size: 1.2em;
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <!-- Step 1: Thank You text -->
+    <div id="thankYou" class="centered">Thank You!</div>
+    <!-- Step 2: Sunflower emoji (hidden initially) -->
+    <div id="sunflower" class="centered" style="opacity: 0;">🌻</div>
+    <!-- Step 3: Message and Countdown (hidden initially) -->
+    <div id="message" style="opacity: 0;">
+      <p>New God Love thanks you for your generous contribution, Mint USA will exist on TikTok before April 20th, 2025.</p>
+      <div id="countdown"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // After 3 seconds, fade out the "Thank You" text
+      setTimeout(function(){
+        document.getElementById("thankYou").style.opacity = 0;
+      }, 3000);
+      
+      // After 4 seconds, fade in the sunflower emoji
+      setTimeout(function(){
+        var sunflower = document.getElementById("sunflower");
+        sunflower.style.opacity = 1;
+        // After 2 seconds, fade out the sunflower emoji
+        setTimeout(function(){
+          sunflower.style.opacity = 0;
+        }, 2000);
+      }, 4000);
+      
+      // After 7 seconds, fade in the message and start the countdown
+      setTimeout(function(){
+        var message = document.getElementById("message");
+        message.style.opacity = 1;
+        startCountdown();
+      }, 7000);
+    });
+
+    // Countdown timer for April 20, 2025
+    function startCountdown() {
+      var countdownElement = document.getElementById("countdown");
+      var targetDate = new Date("April 20, 2025 00:00:00").getTime();
+
+      function updateCountdown() {
+        var now = new Date().getTime();
+        var distance = targetDate - now;
+        
+        if (distance < 0) {
+          countdownElement.innerHTML = "Countdown complete!";
+          clearInterval(interval);
+          return;
+        }
+        
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      }
+      
+      updateCountdown(); // initial call
+      var interval = setInterval(updateCountdown, 1000);
+    }
+  </script>
+</body>
+</html>
