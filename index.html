@@ -1,36 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>DONDA WEST RESURRECTION EASTER 2027</title>
-  <!-- Sunflower favicon -->
-  <link rel="icon" href="sunflower.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New God Love MINT USA</title>
+  <link rel="icon" href="/sunflower.ico" type="image/x-icon">
+  <!-- Importing the Rubik font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100%; height: 100%; }
-    body { display: flex; justify-content: center; align-items: center; background: #000; font-family: 'Helvetica Neue', Arial, sans-serif; padding: 1rem; }
-    .container { text-align: center; width: 95%; max-width: 360px; margin: 0 auto; }
-    .sunflower { font-size: 4rem; margin-bottom: 1rem; line-height: 1; }
-    .subtitle { display: none; }
-    h1 { font-size: calc(1.5rem + 1.5vw); color: #fff; letter-spacing: 0.03em; margin-bottom: 1rem; text-transform: uppercase; }
-    .btn { display: inline-block; width: 100%; max-width: 100%; padding: 0.75rem 1rem; background: #ffd700; color: #000; text-decoration: none; font-size: calc(0.875rem + 0.5vw); font-weight: bold; border-radius: 6px; box-shadow: 0 0 10px rgba(255,215,0,0.7); transition: transform 0.2s; }
-    .btn:hover { transform: scale(1.02); }
-    @media (min-width: 768px) {
-      .container { max-width: 700px; }
-      .sunflower { font-size: 5rem; }
-      .subtitle { display: block; font-size: 2rem; color: #ffd700; margin-bottom: 1.5rem; }
-      h1 { font-size: 4rem; }
-      .btn { width: auto; font-size: 1.5rem; padding: 1rem 2rem; }
+    /* Basic resets */
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: 'Rubik', Helvetica, Arial, sans-serif;
+      background: #f0f0f0;
+    }
+    /* Full-height flex container to center content vertically */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    /* Rainbow animated title */
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    .title {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin: 0;
+      animation: rainbow 1s linear infinite;
+    }
+    @keyframes rainbow {
+      0%   { color: red; }
+      16%  { color: orange; }
+      33%  { color: yellow; }
+      50%  { color: green; }
+      66%  { color: blue; }
+      83%  { color: indigo; }
+      100% { color: violet; }
+    }
+    /* Container for the donation box */
+    .container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    /* New donation button styling */
+    .donation-box {
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 259px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: -2px 10px 5px rgba(0, 0, 0, 0);
+      border-radius: 10px;
+      padding: 20px;
+      font-family: Rubik, SQ Market, Helvetica, Arial, sans-serif;
+      text-align: center;
+    }
+    .donation-box p {
+      font-size: 18px;
+      line-height: 20px;
+      margin: 10px 0;
+    }
+    .donation-box p.bold {
+      font-weight: 600;
+    }
+    .donation-box a {
+      display: inline-block;
+      font-size: 18px;
+      line-height: 48px;
+      height: 48px;
+      color: #000000;
+      min-width: 212px;
+      background-color: #ffbf00;
+      text-align: center;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
+      border-radius: 50px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
+  <!-- Title at the top -->
+  <header>
+    <h1 class="title">🌻 NEW GOD LOVE 🌻</h1>
+  </header>
+
+  <!-- Main container to center the donation box -->
   <div class="container">
-    <div class="sunflower">🌻</div>
-    <div class="subtitle">This Is The Resurrection</div>
-    <h1>DONDA WEST RESURRECTION EASTER 2027</h1>
-    <a href="https://square.link/u/OGoikz9w" class="btn" target="_blank" rel="noopener">Pre-Create Now • $50,000</a>
+    <div class="donation-box">
+      <p>CREATE MINT USA NOW TODAY!</p>
+      <p class="bold">Choose Your Price From $1 to $5,000</p>
+      <a
+        id="embedded-checkout-modal-checkout-button"
+        target="_blank"
+        data-url="https://square.link/u/wHbsGWlw?src=embd"
+        href="https://square.link/u/wHbsGWlw?src=embed"
+      >
+        Donate
+      </a>
+    </div>
   </div>
+
+  <!-- JavaScript to open the checkout window in a responsive manner -->
+  <script>
+    function showCheckoutWindow(e) {
+      e.preventDefault();
+
+      const url = document.getElementById('embedded-checkout-modal-checkout-button').getAttribute('data-url');
+      const title = 'Square Payment Links';
+
+      // Use the top window for size calculations
+      const topWindow = window.top ? window.top : window;
+
+      // Fix dual-screen position
+      const dualScreenLeft = topWindow.screenLeft !== undefined ? topWindow.screenLeft : topWindow.screenX;
+      const dualScreenTop = topWindow.screenTop !== undefined ? topWindow.screenTop : topWindow.screenY;
+
+      const width = topWindow.innerWidth || document.documentElement.clientWidth || screen.width;
+      const height = topWindow.innerHeight || document.documentElement.clientHeight || screen.height;
+
+      const h = height * 0.75;
+      const w = 500;
+
+      const systemZoom = width / topWindow.screen.availWidth;
+      const left = (width - w) / 2 / systemZoom + dualScreenLeft;
+      const top = (height - h) / 2 / systemZoom + dualScreenTop;
+      const newWindow = window.open(url, title, `scrollbars=yes, width=${w / systemZoom}, height=${h / systemZoom}, top=${top}, left=${left}`);
+
+      if (window.focus) newWindow.focus();
+    }
+
+    // Bind the click event to the donation button
+    document.getElementById('embedded-checkout-modal-checkout-button').addEventListener('click', function(e) {
+      showCheckoutWindow(e);
+    });
+  </script>
 </body>
 </html>
