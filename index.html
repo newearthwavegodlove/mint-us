@@ -2,16 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>DONDA WEST RESURRECTION EASTER 2027</title>
+  <!-- Sunflower favicon -->
+  <link rel="icon" href="sunflower.ico" type="image/x-icon">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #000; font-family: 'Helvetica Neue', Arial, sans-serif; }
-    .container { text-align: center; }
-    .sunflowers { font-size: 2rem; margin-bottom: 1rem; }
-    h1 { font-size: 4rem; color: #fff; letter-spacing: 0.1em; margin-bottom: 2rem; text-transform: uppercase; }
-    .btn { display: inline-block; padding: 1.5rem 3rem; background: #ffd700; color: #000; text-decoration: none; font-size: 1.5rem; font-weight: bold; border-radius: 10px; box-shadow: 0 0 20px rgba(255,215,0,0.7); transition: transform 0.2s; }
-    .btn:hover { transform: scale(1.05); }
+    html, body { width: 100%; height: 100%; }
+    body { display: flex; justify-content: center; align-items: center; background: #000; font-family: 'Helvetica Neue', Arial, sans-serif; padding: 1rem; }
+    .container { text-align: center; width: 90%; max-width: 500px; margin: 0 auto; }
+    .sunflowers { font-size: calc(1.5rem + 0.5vw); margin-bottom: 1rem; line-height: 1.2; }
+    h1 { font-size: calc(2rem + 1vw); color: #fff; letter-spacing: 0.05em; margin-bottom: 1.5rem; text-transform: uppercase; }
+    .btn { display: inline-block; width: 100%; max-width: 100%; padding: 1rem 1.5rem; background: #ffd700; color: #000; text-decoration: none; font-size: calc(1rem + 0.5vw); font-weight: bold; border-radius: 8px; box-shadow: 0 0 15px rgba(255,215,0,0.7); transition: transform 0.2s; }
+    .btn:hover { transform: scale(1.03); }
+    @media (min-width: 600px) {
+      .btn { width: auto; }
+    }
+    @media (max-width: 400px) {
+      h1 { font-size: 1.8rem; }
+      .sunflowers { font-size: 1.5rem; }
+      .btn { font-size: 1rem; padding: 0.75rem 1rem; }
+    }
   </style>
 </head>
 <body>
