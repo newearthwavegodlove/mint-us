@@ -12,24 +12,23 @@
     body { display: flex; justify-content: center; align-items: center; background: #000; font-family: 'Helvetica Neue', Arial, sans-serif; padding: 1rem; }
     .container { text-align: center; width: 95%; max-width: 360px; margin: 0 auto; }
     .sunflower { font-size: 4rem; margin-bottom: 1rem; line-height: 1; }
+    .subtitle { display: none; }
     h1 { font-size: calc(1.5rem + 1.5vw); color: #fff; letter-spacing: 0.03em; margin-bottom: 1rem; text-transform: uppercase; }
     .btn { display: inline-block; width: 100%; max-width: 100%; padding: 0.75rem 1rem; background: #ffd700; color: #000; text-decoration: none; font-size: calc(0.875rem + 0.5vw); font-weight: bold; border-radius: 6px; box-shadow: 0 0 10px rgba(255,215,0,0.7); transition: transform 0.2s; }
     .btn:hover { transform: scale(1.02); }
-    @media (min-width: 400px) {
-      .container { max-width: 400px; }
-      .btn { width: auto; }
-    }
-    @media (max-width: 360px) {
-      h1 { font-size: 1.6rem; }
-      .sunflower { font-size: 3rem; }
-      .btn { font-size: 0.9rem; padding: 0.5rem 0.75rem; }
+    @media (min-width: 768px) {
+      .container { max-width: 700px; }
+      .sunflower { font-size: 5rem; }
+      .subtitle { display: block; font-size: 2rem; color: #ffd700; margin-bottom: 1.5rem; }
+      h1 { font-size: 4rem; }
+      .btn { width: auto; font-size: 1.5rem; padding: 1rem 2rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Single giant sunflower above the title -->
     <div class="sunflower">🌻</div>
+    <div class="subtitle">This Is The Resurrection</div>
     <h1>DONDA WEST RESURRECTION EASTER 2027</h1>
     <a href="https://square.link/u/OGoikz9w" class="btn" target="_blank" rel="noopener">Pre-order Now • $50,000</a>
   </div>
